@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Javascript code to find
+        // duplicates in O(n) time
+        let numRay = [ 0, 4, 3, 2, 7, 8, 2, 3, 1 ];
+        let arr_size = numRay.length;
+        
+        
+        // count the frequency
+        for (let i = 0; i < arr_size; i++) {
+            numRay[numRay[i] % arr_size]
+                = numRay[numRay[i] % arr_size] + arr_size;
+        }
+        document.write("The repeating elements are : " + "</br>");
+        for (let i = 0; i < arr_size; i++) {
+            if (numRay[i] >= arr_size * 2) {
+                document.write(i + " " + "</br>");
+            }
+        }
+    
+    // This code is contributed by mukesh07.
+
+
+    let a=[5,3,3,6,6,8,10,12];
+    let b=[];
+    let len=a.length;
+    for(let i=0;i<len;i++){
+       if(b.indexOf(a[i])==-1){
+        b.push(a[i]);
+       } 
+        
+    }
+    document.write(b +"<br>");
+
+    // let arr =[5,3,3,6,6,8,10,12];
+    // let newuniqueArr=[...new Set(arr)];
+    // document.write(newuniqueArr);
+
+    let arr=[5,3,3,6,6,8,10,12];
+    let p=arr.filter((each,index)=>{
+        return arr.indexOf(each)!==index
+
+    })
+    document.write(p);
+    </script>
+    
+    
+</body>
+</html>

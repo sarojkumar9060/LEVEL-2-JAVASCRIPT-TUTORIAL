@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Javascript program to find first
+        // repeating element in arr[]
+            
+        // This function prints the first
+        // repeating element in arr[]
+        function printFirstRepeating(arr)
+        {
+            
+            // Initialize index of first
+            // repeating element
+            let min = -1;
+        
+            // Creates an empty hashset
+            let set = new Set();
+        
+            // Traverse the input array from right to left
+            for(let i = arr.length - 1; i >= 0; i--)
+            {
+                
+                // If element is already in
+                // hash set, update min
+                if (set.has(arr[i]))
+                    min = i;
+                    
+                // Else add element to hash set
+                else
+                    set.add(arr[i]);
+            }
+        
+            // Print the result
+            if (min != -1)
+            document.write("The first repeating element is " +
+                            arr[min]);
+            else
+            document.write("There are no repeating elements");
+        }
+        
+        // Driver code
+        let arr = [ 10, 5, 3, 4, 3, 5, 6 ];
+        
+        printFirstRepeating(arr);
+        
+        // This code is contributed by unknown2108
+            
+        </script>
+        
+</body>
+</html>
